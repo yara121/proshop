@@ -62,7 +62,7 @@ const CartScreen = ({ match, location, history }) => {
                   <Col md={2}>${item.price}</Col>
                   <Col md={2}>
                     <Form.Control
-                      id='select'
+                      // id='select'
                       as='select'
                       value={item.qty}
                       onChange={(e) =>
@@ -71,9 +71,9 @@ const CartScreen = ({ match, location, history }) => {
                         )
                       }
                     >
-                      {[...Array(item.countInStock).keys()].map((z) => (
-                        <option key={z + 1} value={z + 1}>
-                          {z + 1}
+                      {[...Array(item.countInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
                         </option>
                       ))}
                     </Form.Control>

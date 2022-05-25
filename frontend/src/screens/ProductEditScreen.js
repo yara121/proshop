@@ -50,7 +50,6 @@ const ProductEditScreen = ({ match, history }) => {
     }
   }, [dispatch, history, productId, product, successUpdate])
 
-
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0]
     const formData = new FormData()
@@ -73,7 +72,6 @@ const ProductEditScreen = ({ match, history }) => {
       setUploading(false)
     }
   }
-
 
   const submitHandler = (e) => {
     e.preventDefault()
