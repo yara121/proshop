@@ -21,7 +21,7 @@ import {
 } from '../actions/productActions'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(3)
+  const [qty, setQty] = useState(0)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState('')
 
@@ -59,7 +59,7 @@ const ProductScreen = ({ history, match }) => {
       })
     )
   }
- 
+
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
@@ -111,7 +111,7 @@ const ProductScreen = ({ history, match }) => {
                     </Col>
                   </Row>
                 </ListGroup.Item>
-
+             
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <Row>
@@ -122,14 +122,13 @@ const ProductScreen = ({ history, match }) => {
                           value={qty}
                           onChange={(e) => setQty(e.target.value)}
                         >
-                          {[...Array(product.countInStock).keys()].map((x) => (
+                          {[...Array(parseInt(product.countInStock)).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>
                               {x + 1}
                             </option>
-                     
                           ))}
-                       
-                          
+                          {console.log(product.countInStock)}
+
                         </Form.Control>
                       </Col>
                     </Row>
